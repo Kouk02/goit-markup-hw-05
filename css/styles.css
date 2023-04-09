@@ -154,6 +154,7 @@ color: var(--color-ocean);
     line-height: 1.5;
     background-color: var(--color-iris);
     color: var(--color-white);
+    transition: background-color var(--typical-transition);
     letter-spacing: 0.04em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
@@ -304,6 +305,11 @@ background-color: var(--color-cloud);
     padding-top: 24px;
     padding-bottom: 24px;
 }
+
+.current{
+    color: var(--color-ocean);
+}
+
 .current::after {
     content: "";
     position: absolute;
@@ -614,8 +620,8 @@ border-radius: 0px 0px 4px 4px;}
     transition: box-shadow var(--typical-transition);
 }
 
-.filtres-link:focus,
-.filtres-link:hover{
+.filtres-link:hover,
+.filtres-link:focus{
 box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -649,7 +655,8 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     color: var(--color-cloud);
 }
 
-.overlay-box:hover .overlay-content {
+.filtres-link:hover .overlay-content,
+.filtres-link:focus .overlay-content{
     transform: translatex(0);
 }
 .overlay-box {
@@ -693,16 +700,23 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
 }
 .button-window:hover{
     background-color: var(--color-iris);
+    fill: var(--color-white);
+    transition: fill var(--typical-transition);
+    transition: background-color var(--typical-transition);
 }
 
 .back-close-icon{
     top: 50%;
     left: 50%;
+    width: 8px;
+    height: 8px;
     position: absolute;
     transform: translate(-50%, -50%);
     fill: var(--dark-color);
     transition: fill var(--typical-transition);
 }
+
+
 .back-window.is-hidden {
     opacity: 0;
     visibility: hidden;
